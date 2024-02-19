@@ -76,8 +76,8 @@ createApp({
     getData(){
       axios.get(`${this.apiUrl}/api/${this.apiPath}/admin/products`)
       .then((response) => {
-          console.log(response);
-          this.products = response.data.products;
+        this.products = response.data.products;
+        console.log(response);
         })
       .catch((err) => { 
         // console.log(err);

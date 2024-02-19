@@ -86,11 +86,15 @@
 								</div>
 							</div>
 						</div>
-						<template v-for="(image, id) in tempProduct.imagesUrl" v-bind:key="id">
+						<!-- 可選串連試試看 -->
+						<!-- <template v-for="(image, id) in tempProduct.imagesUrl" v-bind:key="id">
 							<img v-if="image" :src="image" alt="子圖片" class="images m-2">
+						</template> -->
+						<template v-if="tempProduct?.imagesUrl?.length">
+							<img v-for="image in tempProduct?.imagesUrl" :src="image" alt="子圖片" class="images m-2">
 						</template>
 					</template>
-					<p class="text-secondary">請選擇一個商品查看</p>
+					<p class="text-secondary" v-else>請選擇一個商品查看</p>
 				</div>
 			</div>
 		</div>
