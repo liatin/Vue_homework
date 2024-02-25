@@ -2,6 +2,7 @@
   <div class="about">
     <h1>This is an about page</h1>
     {{ userData }}
+    <LoadingOverlay :active="isLoading" />
   </div>
 </template>
 
@@ -9,7 +10,8 @@
 export default {
   data() {
     return {
-      userData: {}
+      userData: {},
+      isLoading: true,
     }
   },
   mounted() {
